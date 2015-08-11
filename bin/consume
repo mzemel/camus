@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "camus"
+require 'poseidon'
+
+consumer = Poseidon::PartitionConsumer.new("my_test_consumer", "192.168.59.103", 32780,
+                                            "events", 0, :earliest_offset)
+
+loop do
+  messages = consumer.fetch
+  messages.each do |m|
+    puts m.value
+  end
+end
