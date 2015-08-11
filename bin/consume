@@ -4,8 +4,11 @@ require "bundler/setup"
 require "camus"
 require 'poseidon'
 
-consumer = Poseidon::PartitionConsumer.new("my_test_consumer", "192.168.59.103", 32780,
-                                            "events", 0, :earliest_offset)
+broker = ENV["KAFKA_BROKER"] || "192.168.59.103" 
+port   = ENV["KAFKA_PORT"]   || "32780"
+
+consumer = Poseidon::PartitionConsumer.new("CamusConsumer", broker, port.to_i,
+                                            "audits", 0, :earliest_offset)
 
 loop do
   messages = consumer.fetch

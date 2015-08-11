@@ -5,9 +5,12 @@ require "camus"
 require 'poseidon'
 require 'snappy'
 
-producer = Poseidon::Producer.new(["192.168.59.103:32780"], "my_test_producer")
+broker = ENV["KAFKA_BROKER"] || "192.168.59.103" 
+port   = ENV["KAFKA_PORT"]   || "32782"
+
+producer = Poseidon::Producer.new(["#{broker}:#{port}"], "my_test_producer")
 
 messages = []
-messages << Poseidon::MessageToSend.new("events", "test_value")
+messages << Poseidon::MessageToSend.new("audits", "test_value")
 messages << Poseidon::MessageToSend.new("salads", "other_value")
 producer.send_messages(messages)
