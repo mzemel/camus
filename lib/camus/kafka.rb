@@ -20,7 +20,7 @@ module Camus
       end
 
       def ports
-        Array[ ENV["KAFKA_PORT"] || "32780" ]
+        Array[ ENV["KAFKA_PORT"] || "32782" ]
       end
 
       def locations

@@ -8,9 +8,18 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (4.2.3)
+      i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
     coderay (1.0.9)
     diff-lcs (1.2.5)
+    i18n (0.7.0)
+    json (1.8.3)
     method_source (0.8.2)
+    minitest (5.8.0)
     poseidon (0.0.5)
     pry (0.9.12)
       coderay (~> 1.0.5)
@@ -32,11 +41,15 @@ GEM
     rspec-support (3.2.2)
     slop (3.6.0)
     snappy (0.0.12)
+    thread_safe (0.3.5)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport (= 4.2.3)
   bundler (~> 1.10)
   camus!
   pry (= 0.9.12)

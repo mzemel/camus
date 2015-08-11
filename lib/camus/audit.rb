@@ -13,6 +13,5 @@ module Camus
       raise AuditGuidNotFoundError unless payload.keys.include?(:audit_guid)
       # other validations go in here
     end
-
   end
 end

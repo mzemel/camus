@@ -11,7 +11,7 @@ module Camus
 
     def audit(payload)
       audit = Camus::Audit.new(payload)
-      Camus::Kafka.produce("audits", audit.to_json)
+      Camus::Kafka.produce("audits", audit.payload.to_json)
     end
       
   end
