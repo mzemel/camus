@@ -12,7 +12,7 @@ module Camus
 
       # This is single broker for now.  To upgrade: http://www.rubydoc.info/github/bpot/poseidon/Poseidon/Producer
       def producer
-        @producer ||= Poseidon::Producer.new(locations, "Camus", type: :sync, compression_codec: :gzip)
+        @producer ||= Poseidon::Producer.new(locations, "Camus", type: :async, compression_codec: :gzip)
       end
 
       def brokers
